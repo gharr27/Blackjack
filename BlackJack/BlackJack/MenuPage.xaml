@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="DarkGreen">
-        <TextBlock HorizontalAlignment="Center" Text="BLACKJACK" Padding="20"/>
+        <TextBlock Text="BLACKJACK" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20"/>
 
         <StackPanel VerticalAlignment="Bottom">
             <Button Content="Play" HorizontalAlignment="Center" Margin="20"/>

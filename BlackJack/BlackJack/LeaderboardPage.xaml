@@ -7,5 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+
+    <Grid Background="DarkGreen">
+        <TextBlock Text="LeaderBoard" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20"/>
+        <ListView x:Name="LeaderboardList"/>
+    </Grid>
 </Page>
