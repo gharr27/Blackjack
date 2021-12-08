@@ -8,7 +8,10 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="DarkGreen">
+        <TextBlock Text="Dealer" VerticalAlignment="Top"/>
+        
 
+        <TextBlock Text="Player" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>
