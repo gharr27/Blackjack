@@ -9,9 +9,35 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="DarkGreen">
-        <TextBlock Text="Dealer" VerticalAlignment="Top"/>
-        
+        <StackPanel Height="200" Width="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,100">
+            <TextBlock Text="Dealer" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
+            <TextBlock Text="Hand: "  VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25"/>
+        </StackPanel>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="375,100,975,0"/>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="525,100,825,0"/>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="675,100,675,0"/>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="825,100,525,0"/>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="975,100,375,0"/>
 
-        <TextBlock Text="Player" VerticalAlignment="Bottom"/>
+        <Button Content="Raise Bet" Width="100" Margin="475,0,0,0"/>
+        <Button Content="Hit" Width="100" Margin="625,0,0,0"/>
+        <Button Content="Stand" Width="100" Margin="775,0,0,0"/>
+        <Button Content="Quit" Width="100" Margin="925,0,0,0"/>
+
+        <TextBlock Text="result" Height="100" Width="500" HorizontalAlignment="Center" Margin="0,200,0,0" FontSize="80" TextAlignment="Center"/>
+
+        <StackPanel Height="200" Width="350" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="25,100">
+            <TextBlock Text="Player" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
+            <TextBlock Text="Balance: $000,000,000" HorizontalAlignment="Left" FontSize="25" />
+            <TextBlock Text="Bet: $000,000,000" HorizontalAlignment="Left" FontSize="25"  />
+            <TextBlock Text="Hand: " HorizontalAlignment="Left" FontSize="25" />
+        </StackPanel>
+        
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="375,50,975,100"/>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="525,50,825,100"/>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="675,50,675,100"/>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="825,0,525,100"/>
+        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="975,0,375,100"/>
+
     </Grid>
 </Page>
