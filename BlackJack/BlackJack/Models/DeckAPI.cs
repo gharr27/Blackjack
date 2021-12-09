@@ -27,15 +27,30 @@ namespace BlackJack.Models
         {
             Uri request = new Uri($"{baseUrl}/{deck_id}/draw/?count=2");
 
-            Deck deck;
+            Deck hand;
 
             using (var httpClient = new HttpClient())
             {
                 var json = await httpClient.GetStringAsync(request);
-                deck = JsonConvert.DeserializeObject<Deck>(json);
+                hand = JsonConvert.DeserializeObject<Deck>(json);
             }
 
-            return deck;
+            return hand;
+        }
+
+        public async static Task<Card> DrawCard(string deck_id)
+        {
+            Uri request = new Uri($"{baseUrl}/{deck_id}/draw/?count=1");
+
+            Card hand;
+
+            using (var httpClient = new HttpClient())
+            {
+                var json = await httpClient.GetStringAsync(request);
+                hand = JsonConvert.DeserializeObject<Card>(json);
+            }
+
+            return hand;
         }
     }
 }
