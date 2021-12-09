@@ -27,14 +27,15 @@ namespace BlackJack.Models
         {
             Uri request = new Uri($"{baseUrl}/{deck_id}/draw/?count=2");
 
-            Card[] cards;
+            Deck deck;
 
-            for(int i = 0; i < 2; i++)
+            using (var httpClient = new HttpClient())
             {
-
+                var json = await httpClient.GetStringAsync(request);
+                deck = JsonConvert.DeserializeObject<Deck>(json);
             }
 
-
+            return deck;
         }
     }
 }
