@@ -6,13 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
 
     <Grid Background="DarkGreen">
         <Image Source="Assets/spade.png" Opacity="0.3"/>
-        <StackPanel VerticalAlignment="Center">
-            
-            <TextBlock Text="BLACKJACK" Foreground="Black" FontSize="100" TextAlignment="Center"/>
+        <StackPanel x:Name="InfoStack" VerticalAlignment="Center">            
+            <TextBlock x:Name="titleText" Text="BLACKJACK" Foreground="Black" FontSize="100" TextAlignment="Center"/>
             <TextBlock Text="by Garrett Harr" Foreground="White" FontSize="50" TextAlignment="Center"/>
             <TextBlock Text="and" Foreground="White" FontSize="50" TextAlignment="Center"/>
             <TextBlock Text="Sargent Erwin" Foreground="White" FontSize="50" TextAlignment="Center"/>
