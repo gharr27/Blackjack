@@ -10,14 +10,15 @@
 
     
     
-    <Grid Background="DarkGreen">
-        <TextBlock Text="BLACKJACK" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20"/>
+    <Grid Background="DarkGreen">        
 
-        <StackPanel VerticalAlignment="Bottom">
+        <StackPanel VerticalAlignment="Top" >
+            <TextBlock x:Name="title" Text="BLACKJACK" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20" FontSize="100" Foreground="Black" />
             <Button x:Name="playBtn" Content="Play" HorizontalAlignment="Center" Margin="20" Width="200" Click="playBtn_Click"/>
             <Button x:Name="leaderboardBtn" Content="Leaderboard" HorizontalAlignment="Center" Margin="20" Width="200" Click="leaderboardBtn_Click"/>
             <Button x:Name="aboutBtn" Content="About" HorizontalAlignment="Center" Margin="20" Width="200" Click="aboutBtn_Click"/>
             <Button x:Name="exitBtn" Content="Exit" HorizontalAlignment="Center" Margin="20" Width="200" Click="exitBtn_Click"/>
         </StackPanel>
+      
     </Grid>
 </Page>
