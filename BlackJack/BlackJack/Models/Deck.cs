@@ -11,7 +11,7 @@ namespace BlackJack.Models
     public class Deck
     {
         private bool success { get; set; }
-        private string deck_id { get; set; }
+        public string deck_id { get; set; }
         private bool shuffled { get; set; }
         private int remaining { get; set; }
         public Card[] cards { get; set; }
