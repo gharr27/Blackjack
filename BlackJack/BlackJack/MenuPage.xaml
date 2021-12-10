@@ -7,17 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     
-    
-    <Grid Background="DarkGreen">        
+    <Grid Background="DarkGreen">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="750" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="title.FontSize" Value="100"/>
+                        <Setter Target="playBtn.Width" Value="200"/>
+                        <Setter Target="playBtn.Margin" Value="20"/>
 
+                        <Setter Target="leaderboardBtn.Width" Value="200"/>
+                        <Setter Target="leaderboardBtn.Margin" Value="20"/>
+
+                        <Setter Target="aboutBtn.Width" Value="200"/>
+                        <Setter Target="aboutBtn.Margin" Value="20"/>
+
+                        <Setter Target="exitBtn.Width" Value="200"/>
+                        <Setter Target="exitBtn.Margin" Value="20"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
         <StackPanel VerticalAlignment="Top" >
-            <TextBlock x:Name="title" Text="BLACKJACK" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20" FontSize="100" Foreground="Black" />
-            <Button x:Name="playBtn" Content="Play" HorizontalAlignment="Center" Margin="20" Width="200" Click="playBtn_Click"/>
-            <Button x:Name="leaderboardBtn" Content="Leaderboard" HorizontalAlignment="Center" Margin="20" Width="200" Click="leaderboardBtn_Click"/>
-            <Button x:Name="aboutBtn" Content="About" HorizontalAlignment="Center" Margin="20" Width="200" Click="aboutBtn_Click"/>
-            <Button x:Name="exitBtn" Content="Exit" HorizontalAlignment="Center" Margin="20" Width="200" Click="exitBtn_Click"/>
+            <TextBlock x:Name="title" Text="BLACKJACK" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20" FontSize="50" Foreground="Black" />
+            <Button x:Name="playBtn" Content="Play" HorizontalAlignment="Center" Margin="10" Width="100" Click="playBtn_Click"/>
+            <Button x:Name="leaderboardBtn" Content="Leaderboard" HorizontalAlignment="Center" Margin="10" Width="100" Click="leaderboardBtn_Click"/>
+            <Button x:Name="aboutBtn" Content="About" HorizontalAlignment="Center" Margin="10" Width="100" Click="aboutBtn_Click"/>
+            <Button x:Name="exitBtn" Content="Exit" HorizontalAlignment="Center" Margin="10" Width="100" Click="exitBtn_Click"/>
         </StackPanel>
       
     </Grid>
