@@ -30,6 +30,10 @@ namespace BlackJack
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
+
+            
         }
+
+        
     }
 }
