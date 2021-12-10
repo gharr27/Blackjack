@@ -9,7 +9,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="DarkGreen">
-        <TextBlock Text="LeaderBoard" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20"/>
-        <ListView x:Name="LeaderboardList"/>
+        <TextBlock Text="Leaderboard" FontSize ="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50"/>
+        <Button x:Name="menuBtn" Content="Main Menu" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="100,80" Click="menuBtn_Click"/>
+        <ListView x:Name="LeaderboardList" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Center"  Width="1300" Height="800" Margin="0,140">
+            <ListViewItem>Yeet</ListViewItem>
+            <ListViewItem>Yeet</ListViewItem>
+            <ListViewItem>Yeet</ListViewItem>
+            <ListViewItem>Yeet</ListViewItem>
+            <ListViewItem>Yeet</ListViewItem>
+            <ListViewItem>Yeet</ListViewItem>
+        </ListView>
     </Grid>
 </Page>

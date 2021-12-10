@@ -26,5 +26,10 @@ namespace BlackJack
         {
             this.InitializeComponent();
         }
+
+        private void menuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.GoBack();
+        }
     }
 }

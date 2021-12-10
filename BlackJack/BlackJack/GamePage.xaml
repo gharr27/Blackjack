@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    MinHeight="600" MinWidth="600">
 
     <Grid Background="DarkGreen">
         <StackPanel Height="200" Width="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,100">
@@ -22,7 +23,7 @@
         <Button Content="Raise Bet" Width="100" Margin="475,0,0,0"/>
         <Button Content="Hit" Width="100" Margin="625,0,0,0"/>
         <Button Content="Stand" Width="100" Margin="775,0,0,0"/>
-        <Button Content="Quit" Width="100" Margin="925,0,0,0"/>
+        <Button x:Name="quitBtn" Content="Quit" Width="100" Margin="925,0,0,0" Click="quitBtn_Click"/>
 
         <TextBlock Text="result" Height="100" Width="500" HorizontalAlignment="Center" Margin="0,200,0,0" FontSize="80" TextAlignment="Center"/>
 
