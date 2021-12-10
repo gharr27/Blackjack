@@ -44,7 +44,7 @@ namespace BlackJack
 
         private async void hitBtn_Click(object sender, RoutedEventArgs e)
         {
-            Card card = await DeckAPIViewModel.DrawCard(deck_id);
+            Cards card = await DeckAPIViewModel.DrawCard(deck_id);
             Debug.WriteLine(card.value);
 
             //if (player.handCount < 5)
