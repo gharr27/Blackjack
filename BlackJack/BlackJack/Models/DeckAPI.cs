@@ -42,15 +42,15 @@ namespace BlackJack.Models
         {
             Uri request = new Uri($"{baseUrl}/{deck_id}/draw/?count=1");
 
-            Card hand;
+            Card card;
 
             using (var httpClient = new HttpClient())
             {
                 var json = await httpClient.GetStringAsync(request);
-                hand = JsonConvert.DeserializeObject<Card>(json);
+                card = JsonConvert.DeserializeObject<Card>(json);
             }
 
-            return hand;
+            return card;
         }
     }
 }

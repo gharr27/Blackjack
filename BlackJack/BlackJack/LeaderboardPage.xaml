@@ -11,13 +11,8 @@
     <Grid Background="DarkGreen">
         <TextBlock Text="Leaderboard" FontSize ="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50"/>
         <Button x:Name="menuBtn" Content="Main Menu" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="100,80" Click="menuBtn_Click"/>
-        <ListView x:Name="LeaderboardList" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Center"  Width="1300" Height="800" Margin="0,140">
-            <ListViewItem>Yeet</ListViewItem>
-            <ListViewItem>Yeet</ListViewItem>
-            <ListViewItem>Yeet</ListViewItem>
-            <ListViewItem>Yeet</ListViewItem>
-            <ListViewItem>Yeet</ListViewItem>
-            <ListViewItem>Yeet</ListViewItem>
+        <ListView x:Name="LeaderboardList" ItemsSource="{x:Bind}" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Center"  Width="1300" Height="800" Margin="0,140">
+           
         </ListView>
     </Grid>
 </Page>

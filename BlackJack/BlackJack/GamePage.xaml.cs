@@ -29,20 +29,42 @@ namespace BlackJack
         {
             this.InitializeComponent();
 
-            Task<Deck> deck = DeckAPIViewModel.NewDeck();
-
-            deck_id = deck.Result.deck_id;
+           
         }
 
-        private void hitButton_Click(object sender, RoutedEventArgs e)
+        private async void NewGame()
         {
-            Task<Card> card = DeckAPIViewModel.DrawCard(deck_id);
-            Debug.WriteLine(card.Result.value);
+            Deck deck = await DeckAPIViewModel.NewDeck();
+
+            deck_id = deck.deck_id;
+
+            //await DeckAPI.Deal(deck_id);
+        }
+
+        private async void hitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Card card = await DeckAPIViewModel.DrawCard(deck_id);
+            Debug.WriteLine(card.value);
+
+            //if (player.handCount < 5)
+            //playerCard1.Source = card.image;
+            //handValue += card.value
         }
 
         private void quitBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
+        }
+
+        private void raiseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //player.bet += 100;
+            //player.balance -= 100;
+        }
+
+        private void standBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //dealer logic
         }
     }
 }

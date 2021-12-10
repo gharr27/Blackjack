@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BlackJack.Models
 {
-    class User
+    public class User
     {
+        string username { get; set; }
+        int balance { get; set; }
+        int blackjacks { get; set; }
     }
 }

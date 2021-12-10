@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlackJack.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,6 +32,11 @@ namespace BlackJack
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            using (var db = new UserDB())
+            {
+                db.Database.EnsureCreated();
+            }
         }
 
         /// <summary>

@@ -14,15 +14,15 @@
             <TextBlock Text="Dealer" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
             <TextBlock Text="Hand: "  VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25"/>
         </StackPanel>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="375,100,975,0"/>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="525,100,825,0"/>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="675,100,675,0"/>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="825,100,525,0"/>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="975,100,375,0"/>
+        <Image x:Name="dealerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="375,100,975,0"/>
+        <Image x:Name="dealerCard2" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="525,100,825,0"/>
+        <Image x:Name="dealerCard3" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="675,100,675,0"/>
+        <Image x:Name="dealerCard4" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="825,100,525,0"/>
+        <Image x:Name="dealerCard5" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="975,100,375,0"/>
 
-        <Button Content="Raise Bet" Width="100" Margin="475,0,0,0"/>
-        <Button x:Name="hitButton" Content="Hit" Width="100" Margin="625,0,0,0" Click="hitButton_Click"/>
-        <Button Content="Stand" Width="100" Margin="775,0,0,0"/>
+        <Button x:Name="raiseBtn" Content="Raise Bet" Width="100" Margin="475,0,0,0" Click="raiseBtn_Click"/>
+        <Button x:Name="hitButton" Content="Hit" Width="100" Margin="625,0,0,0" Click="hitBtn_Click"/>
+        <Button x:Name="standBtn" Content="Stand" Width="100" Margin="775,0,0,0" Click="standBtn_Click"/>
         <Button x:Name="quitBtn" Content="Quit" Width="100" Margin="925,0,0,0" Click="quitBtn_Click"/>
 
         <TextBlock Text="result" Height="100" Width="500" HorizontalAlignment="Center" Margin="0,200,0,0" FontSize="80" TextAlignment="Center"/>
@@ -33,12 +33,12 @@
             <TextBlock Text="Bet: $000,000,000" HorizontalAlignment="Left" FontSize="25"  />
             <TextBlock Text="Hand: " HorizontalAlignment="Left" FontSize="25" />
         </StackPanel>
-        
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="375,50,975,100"/>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="525,50,825,100"/>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="675,50,675,100"/>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="825,0,525,100"/>
-        <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="975,0,375,100"/>
+
+        <Image x:Name="playerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="375,50,975,100"/>
+        <Image x:Name="playerCard2" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="525,50,825,100"/>
+        <Image x:Name="playerCard3" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="675,50,675,100"/>
+        <Image x:Name="playerCard4" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="825,0,525,100"/>
+        <Image x:Name="playerCard5" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="975,0,375,100"/>
 
     </Grid>
 </Page>
