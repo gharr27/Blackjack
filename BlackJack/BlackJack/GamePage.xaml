@@ -20,7 +20,7 @@
         <Image Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="975,100,375,0"/>
 
         <Button Content="Raise Bet" Width="100" Margin="475,0,0,0"/>
-        <Button Content="Hit" Width="100" Margin="625,0,0,0"/>
+        <Button x:Name="hitButton" Content="Hit" Width="100" Margin="625,0,0,0" Click="hitButton_Click"/>
         <Button Content="Stand" Width="100" Margin="775,0,0,0"/>
         <Button Content="Quit" Width="100" Margin="925,0,0,0"/>
 
