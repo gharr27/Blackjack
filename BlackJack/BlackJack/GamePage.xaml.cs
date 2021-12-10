@@ -29,6 +29,7 @@ namespace BlackJack
         {
             this.InitializeComponent();
 
+            NewGame();
            
         }
 

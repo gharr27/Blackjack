@@ -8,6 +8,7 @@ namespace BlackJack.Models
 {
     public class User
     {
+        public int Id { get; set; }
         string username { get; set; }
         int balance { get; set; }
         int blackjacks { get; set; }
