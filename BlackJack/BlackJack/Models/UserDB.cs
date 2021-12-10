@@ -14,7 +14,7 @@ namespace BlackJack.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //path?
-            //optionsBuilder.UseSqlite();
+            optionsBuilder.UseSqlite("Data Source=users.db");
         }
     }
 }
