@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    MinHeight="600" MinWidth="600">
 
     <Grid Background="DarkGreen">
         <TextBlock Text="Leaderboard" FontSize ="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,50"/>

@@ -6,14 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    MinHeight="600" MinWidth="600">
     
     <Grid Background="DarkGreen">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="750" />
+                        <AdaptiveTrigger MinWindowWidth="750" MinWindowHeight="600"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="title.FontSize" Value="100"/>
@@ -33,12 +34,12 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         
-        <StackPanel VerticalAlignment="Top" >
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
             <TextBlock x:Name="title" Text="BLACKJACK" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20" FontSize="50" Foreground="Black" />
             <Button x:Name="playBtn" Content="Play" HorizontalAlignment="Center" Margin="10" Width="100" Click="playBtn_Click"/>
             <Button x:Name="leaderboardBtn" Content="Leaderboard" HorizontalAlignment="Center" Margin="10" Width="100" Click="leaderboardBtn_Click"/>
             <Button x:Name="aboutBtn" Content="About" HorizontalAlignment="Center" Margin="10" Width="100" Click="aboutBtn_Click"/>
-            <Button x:Name="exitBtn" Content="Exit" HorizontalAlignment="Center" Margin="10" Width="100" Click="exitBtn_Click"/>
+            <Button x:Name="exitBtn" Content="Exit" HorizontalAlignment="Center" Margin="0" Width="100" Click="exitBtn_Click"/>
         </StackPanel>
       
     </Grid>

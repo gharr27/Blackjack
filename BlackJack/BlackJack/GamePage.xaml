@@ -10,10 +10,34 @@
     MinHeight="600" MinWidth="600">
 
     <Grid Background="DarkGreen">
-        <StackPanel Height="200" Width="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,100">
-            <TextBlock Text="Dealer" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
-            <TextBlock Text="Hand: "  VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25"/>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="750"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="dealerInfo.Margin" Value="25,100"/>
+                        <Setter Target="dealerName.FontSize" Value="50"/>
+                        <Setter Target="dealerHand.FontSize" Value="25"/>
+
+                        <Setter Target="playerInfo.Margin" Value="25,600,0,0"/>
+                        <Setter Target="playerName.FontSize" Value="50"/>
+                        <Setter Target="playerBalance.FontSize" Value="25"/>
+                        <Setter Target="playerBet.FontSize" Value="25"/>
+                        <Setter Target="playerHand.FontSize" Value="25"/>
+
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <StackPanel x:Name="dealerInfo" Height="200" Width="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,50">
+            <TextBlock x:Name="dealerName" Text="Dealer" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" FontWeight="Bold"/>
+            <TextBlock x:Name="dealerHand" Text="Hand: "  VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10"/>
         </StackPanel>
+        
         <Image x:Name="dealerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="375,100,975,0"/>
         <Image x:Name="dealerCard2" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="525,100,825,0"/>
         <Image x:Name="dealerCard3" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="675,100,675,0"/>
@@ -25,13 +49,13 @@
         <Button x:Name="standBtn" Content="Stand" Width="100" Margin="775,0,0,0" Click="standBtn_Click"/>
         <Button x:Name="quitBtn" Content="Quit" Width="100" Margin="925,0,0,0" Click="quitBtn_Click"/>
 
-        <TextBlock Text="result" Height="100" Width="500" HorizontalAlignment="Center" Margin="0,200,0,0" FontSize="80" TextAlignment="Center"/>
+        <TextBlock x:Name="result" Text="result" Height="100" Width="500" HorizontalAlignment="Center" Margin="0,200,0,0" FontSize="60" TextAlignment="Center"/>
 
-        <StackPanel Height="200" Width="350" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="25,100">
-            <TextBlock Text="Player" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
-            <TextBlock Text="Balance: $000,000,000" HorizontalAlignment="Left" FontSize="25" />
-            <TextBlock Text="Bet: $000,000,000" HorizontalAlignment="Left" FontSize="25"  />
-            <TextBlock Text="Hand: " HorizontalAlignment="Left" FontSize="25" />
+        <StackPanel x:Name="playerInfo" Height="200" Width="350" HorizontalAlignment="Left" Margin="15,200">
+            <TextBlock x:Name="playerName" Text="Player" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" FontWeight="Bold"/>
+            <TextBlock x:Name="playerBalance" Text="Balance: $000,000,000" HorizontalAlignment="Left" FontSize="10" />
+            <TextBlock x:Name="playerBet" Text="Bet: $000,000,000" HorizontalAlignment="Left" FontSize="10"  />
+            <TextBlock x:Name="playerHand" Text="Hand: " HorizontalAlignment="Left" FontSize="10" />
         </StackPanel>
 
         <Image x:Name="playerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="375,50,975,100"/>
