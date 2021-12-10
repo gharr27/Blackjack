@@ -25,6 +25,27 @@ namespace BlackJack
         public MenuPage()
         {
             this.InitializeComponent();
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
+        }
+
+        private void playBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(GamePage));
+        }
+
+        private void leaderboardBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LeaderboardPage));
+        }
+
+        private void aboutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AboutPage));
+        }
+
+        private void exitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
         }
     }
 }
