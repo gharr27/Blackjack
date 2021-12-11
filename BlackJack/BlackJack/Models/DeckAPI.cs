@@ -38,19 +38,19 @@ namespace BlackJack.Models
             return hand;
         }
 
-        public async static Task<Cards> DrawCard(string deck_id)
+        public async static Task<Hand> DrawCard(string deck_id)
         {
             Uri request = new Uri($"{baseUrl}/{deck_id}/draw/?count=1");
 
-            Cards card;
+            Hand hand;
 
             using (var httpClient = new HttpClient())
             {
                 var json = await httpClient.GetStringAsync(request);
-                card = JsonConvert.DeserializeObject<Cards>(json);
+                hand = JsonConvert.DeserializeObject<Hand>(json);
             }
 
-            return card;
+            return hand;
         }
     }
 }

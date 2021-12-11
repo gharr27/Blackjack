@@ -20,7 +20,7 @@ namespace BlackJack.ViewModels
             return await DeckAPI.Deal(deck_id);
         }
 
-        public async static Task<Cards> DrawCard(string deck_id)
+        public async static Task<Hand> DrawCard(string deck_id)
         {
             return await DeckAPI.DrawCard(deck_id);
         }

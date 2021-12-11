@@ -14,11 +14,20 @@ namespace BlackJack.Models
         public string deck_id { get; set; }
         private bool shuffled { get; set; }
         private int remaining { get; set; }
-        public Cards[] cards { get; set; }
+        public Card[] cards { get; set; }
     }
 
-    public class Cards
+    public class Hand
+    { 
+        bool success { get; set; }
+        public List<Card> cards { get; set; }
+        string deck_id { get; set; }
+        int remaining { get; set; }
+    }
+
+    public class Card
     {
+        
         public string image { get; set; }
         public string value { get; set; }
         public string suit { get; set; }
