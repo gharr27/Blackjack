@@ -24,9 +24,15 @@ namespace BlackJack
     /// </summary>
     public sealed partial class SignInPage : Page
     {
+        public UserViewModel User { get; set; }
+        public LeaderboardViewModel Leaderboard { get; set; }
+
         public SignInPage()
         {
             this.InitializeComponent();
+
+            User = new UserViewModel();
+            Leaderboard = new LeaderboardViewModel();
         }
 
         private void cancelBtn_Click(object sender, RoutedEventArgs e)
@@ -37,28 +43,29 @@ namespace BlackJack
         private void signInBtn_Click(object sender, RoutedEventArgs e)
         {
             //add and save new User to DB
-            using (var db = new UserDB())
-            {
-                
-            }
+
+            string enteredName = signInEntry.Text;
+
+            User = Leaderboard.FetchUser(enteredName);
+            
             this.Frame.Navigate(typeof(GamePage));
         }
 
         private void signUpBtn_Click(object sender, RoutedEventArgs e)
         {
             //search and find User in DB
-            using (var db = new UserDB())
+           
+            var newUser = new UserViewModel
             {
-                var newUser = new UserViewModel
-                {
-                    Username = signUpEntry.Text,
-                    Balance = 5000,
-                    Blackjacks = 0
-                };
+                Username = signUpEntry.Text,
+                Balance = 5000,
+                Blackjacks = 0
+            };
 
-                db.Users.Add();
-                db.SaveChanges();
-            }
+            Leaderboard.Users.Add(newUser);
+
+
+            //send username and db data to GamePage?
             this.Frame.Navigate(typeof(GamePage));
         }
     }

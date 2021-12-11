@@ -327,5 +327,10 @@ namespace BlackJack
                     break;
             }
         }
+
+        private void redrawBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

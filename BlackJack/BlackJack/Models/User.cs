@@ -30,8 +30,8 @@ namespace BlackJack.Models
         public int Balance
         {
             get
-            {
-                return balance
+            { 
+                return balance;
             }
             set
             {

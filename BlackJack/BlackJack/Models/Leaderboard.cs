@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack.Models
 {
-    class Leaderboard
+    public class Leaderboard
     {
         private List<User> userList;
 
@@ -74,22 +74,25 @@ namespace BlackJack.Models
             }
         }
 
-        //public void FetchUsers(string searchTerm)
-        //{
-        //    var users = UserFetcher.FetchUsers(searchTerm);
-        //    using (var db = new UserDB())
-        //    {
-        //        foreach (var newUser in users)
-        //        {
-        //            newUser.Id = 0;
-        //            db.Users.Add(newUser);
-        //        }
+        public User FetchUsers(string searchTerm)
+        {
+            var users = UserFetcher.FetchUsers(searchTerm);
 
-        //        db.SaveChanges();
-        //    }
+            using (var db = new UserDB())
+            {
+                foreach (var newUser in users)
+                {
+                    newUser.Id = 0;
+                    db.Users.Add(newUser);
+                }
 
-        //    // Now that ids have been assigned to each movie, build the list
-        //    BuildUserList();
-        //}
+                db.SaveChanges();
+            }
+
+            // Now that ids have been assigned to each movie, build the list
+            BuildUserList();
+
+            return users;
+        }
     }
 }
