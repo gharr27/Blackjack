@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlackJack.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,20 +10,43 @@ namespace BlackJack.ViewModels
 {
     public class UserViewModel : INotifyPropertyChanged
     {
-        private string username;
-        private int balance;
-        private int blackjacks;
+        public event PropertyChangedEventHandler PropertyChanged;
+        private User user;
+
+        public UserViewModel(User user = null)
+        {
+            if(user == null)
+            {
+                user = new User();
+            }
+
+            this.user = user;
+        }
+
+        public User Model
+        {
+            get
+            {
+                return user;
+            }
+        }
+
+        public int UserId
+        {
+            get { return user.Id; }
+            set { user.Id = value; }
+        }
 
         public string Username
         {
             get
             {
-                return username;
+                return user.Username;
             }
             set
             {
-                username = value;
-                OnPropertyChanged(this, new PropertyChangedEventArgs("Username"));
+                user.Username = value;
+                OnPropertyChanged("Username");
             }
         }
 
@@ -30,12 +54,12 @@ namespace BlackJack.ViewModels
         {
             get
             {
-                return balance;
+                return user.Balance;
             }
             set
             {
-                balance = value;
-                OnPropertyChanged(this, new PropertyChangedEventArgs("Balance"));
+                user.Balance = value;
+                OnPropertyChanged("Balance");
             }
         }
 
@@ -43,19 +67,19 @@ namespace BlackJack.ViewModels
         {
             get
             {
-                return blackjacks;
+                return user.Blackjacks;
             }
             set
             {
-                blackjacks = value;
-                OnPropertyChanged(this, new PropertyChangedEventArgs("Blackjacks"));
+                user.Blackjacks = value;
+                OnPropertyChanged("Blackjacks");
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        
+        private void OnPropertyChanged(string property)
         {
-            PropertyChanged?.Invoke(sender, e);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
     }
 }

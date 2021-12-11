@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BlackJack.Models;
+using BlackJack.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -35,12 +37,28 @@ namespace BlackJack
         private void signInBtn_Click(object sender, RoutedEventArgs e)
         {
             //add and save new User to DB
+            using (var db = new UserDB())
+            {
+                
+            }
             this.Frame.Navigate(typeof(GamePage));
         }
 
         private void signUpBtn_Click(object sender, RoutedEventArgs e)
         {
             //search and find User in DB
+            using (var db = new UserDB())
+            {
+                var newUser = new UserViewModel
+                {
+                    Username = signUpEntry.Text,
+                    Balance = 5000,
+                    Blackjacks = 0
+                };
+
+                db.Users.Add();
+                db.SaveChanges();
+            }
             this.Frame.Navigate(typeof(GamePage));
         }
     }

@@ -134,6 +134,7 @@
     <Compile Include="Models\Dealer.cs" />
     <Compile Include="Models\Deck.cs" />
     <Compile Include="Models\DeckAPI.cs" />
+    <Compile Include="Models\Leaderboard.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\UserDB.cs" />
     <Compile Include="Models\User.cs" />
@@ -142,6 +143,7 @@
       <DependentUpon>SignInPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\DeckAPIViewModel.cs" />
+    <Compile Include="ViewModels\LeaderboardViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
