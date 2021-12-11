@@ -17,6 +17,8 @@ using BlackJack.Models;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage;
+using Newtonsoft.Json;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,6 +26,9 @@ namespace BlackJack
 {
     public sealed partial class GamePage : Page
     {
+        private UserViewModel user; 
+        private LeaderboardViewModel leaderboard;
+
         private string deck_id;
         private Player player;
         private Dealer dealer;
@@ -43,6 +48,13 @@ namespace BlackJack
             dealer = new Dealer();
             player.balance = 2500;
             NewGame();           
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            string json = ApplicationData.Current.LocalSettings.Values["user"] as string;
+            user = JsonConvert.DeserializeObject<UserViewModel>(json);
+            
         }
 
         private void CheckForEndGame()
@@ -165,6 +177,8 @@ namespace BlackJack
         private void quitBtn_Click(object sender, RoutedEventArgs e)
         {
             //save balance to DB
+            leaderboard.UpdateUser(user.UserId);
+            
             this.Frame.Navigate(typeof(MenuPage));
         }
 

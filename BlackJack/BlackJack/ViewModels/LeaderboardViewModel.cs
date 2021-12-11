@@ -53,14 +53,5 @@ namespace BlackJack.ViewModels
             }
         }
 
-        public UserViewModel FetchUser(string searchName)
-        {
-            User user = leaderboard.FetchUsers(searchName);
-
-            //I added this just to get the error to go away
-            UserViewModel found = new UserViewModel();
-
-            return found;
-        }
     }
 }

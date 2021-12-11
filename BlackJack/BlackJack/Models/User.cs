@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace BlackJack.Models
 {
-    public class User : IEnumerable<User>
+    public class User
     {
-        private List<User> userList;
-
+        
         public int Id { get; set; }
 
         private string username { get; set; }
@@ -61,16 +60,6 @@ namespace BlackJack.Models
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             PropertyChanged?.Invoke(sender, e);
-        }
-
-        public IEnumerator<User> GetEnumerator()
-        {
-            return userList.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return userList.GetEnumerator();
         }
     }
 }

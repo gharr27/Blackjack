@@ -11,16 +11,10 @@
 
     <StackPanel Background="DarkGreen">
         <RelativePanel VerticalAlignment="Top" Height="200">
-            <TextBlock x:Name="signInLabel" Text="Sign-In" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25"/>
-            <TextBox x:Name="signInEntry" Height="30" Width="200" RelativePanel.Below="signInLabel" Margin="25,0" Background="White"/>
+            <TextBlock x:Name="signInLabel" Text="Enter a Username:" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25"/>
+            <TextBox x:Name="signInEntry" PlaceholderText="Username" Height="30" Width="200" RelativePanel.Below="signInLabel" Margin="25,0" Background="White"/>
             <Button x:Name="signInBtn" Content="Sign-In" RelativePanel.Below="signInLabel" RelativePanel.RightOf="signInEntry" Click="signInBtn_Click"/>
-        </RelativePanel>
-
-        <RelativePanel VerticalAlignment="Center">
-            <TextBlock x:Name="signUpLabel" Text="Don't have an account? Sign-up here!" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25"/>
-            <TextBox x:Name="signUpEntry" Height="30" Width="200" RelativePanel.Below="signUpLabel" Margin="25,0" Background="White"/>
-            <Button x:Name="signUpBtn" Content="Sign-Up" RelativePanel.Below="signUpLabel" RelativePanel.RightOf="signUpEntry" Click="signUpBtn_Click"/>
-        </RelativePanel>
+        </RelativePanel>    
 
         <Button x:Name="cancelBtn" Content="Cancel" VerticalAlignment="Center" Margin="25,100" Click="cancelBtn_Click"/>
     </StackPanel>

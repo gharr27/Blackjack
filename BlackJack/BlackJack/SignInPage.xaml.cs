@@ -1,5 +1,6 @@
 ﻿using BlackJack.Models;
 using BlackJack.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -44,25 +46,17 @@ namespace BlackJack
         {
             //add and save new User to DB
 
-            string enteredName = signInEntry.Text;
-
-            User = Leaderboard.FetchUser(enteredName);
-            
-            this.Frame.Navigate(typeof(GamePage));
-        }
-
-        private void signUpBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //search and find User in DB
-           
             var newUser = new UserViewModel
             {
-                Username = signUpEntry.Text,
+                Username = signInEntry.Text,
                 Balance = 5000,
                 Blackjacks = 0
             };
 
             Leaderboard.Users.Add(newUser);
+
+            string json = JsonConvert.SerializeObject(newUser);
+            ApplicationData.Current.LocalSettings.Values["user"] = newUser;
 
 
             //send username and db data to GamePage?

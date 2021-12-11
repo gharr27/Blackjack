@@ -31,6 +31,7 @@ namespace BlackJack.Models
 
             using (var db = new UserDB())
             {
+
                 foreach(var user in db.Users)
                 {
                     userList.Add(user);
@@ -74,25 +75,6 @@ namespace BlackJack.Models
             }
         }
 
-        public User FetchUsers(string searchTerm)
-        {
-            var users = UserFetcher.FetchUsers(searchTerm);
-
-            using (var db = new UserDB())
-            {
-                foreach (var newUser in users)
-                {
-                    newUser.Id = 0;
-                    db.Users.Add(newUser);
-                }
-
-                db.SaveChanges();
-            }
-
-            // Now that ids have been assigned to each movie, build the list
-            BuildUserList();
-
-            return users;
-        }
+        
     }
 }
