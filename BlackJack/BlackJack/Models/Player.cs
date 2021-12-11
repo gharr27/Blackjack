@@ -11,5 +11,6 @@ namespace BlackJack.Models
     {
         public int balance { get; set; }
         public int handValue { get; set; }
+        public int handCount { get; set; }
     }
 }
