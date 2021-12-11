@@ -134,6 +134,7 @@
     <Compile Include="Models\Dealer.cs" />
     <Compile Include="Models\Deck.cs" />
     <Compile Include="Models\DeckAPI.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Models\UserDB.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

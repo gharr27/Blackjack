@@ -24,12 +24,15 @@ namespace BlackJack
     public sealed partial class GamePage : Page
     {
         private string deck_id;
+        private Player player;
 
         public GamePage()
         {
             this.InitializeComponent();
 
             NewGame();           
+            player = new Player();
+
         }
 
         private async void NewGame()
@@ -37,18 +40,52 @@ namespace BlackJack
             Deck deck = await DeckAPIViewModel.NewDeck();
 
             deck_id = deck.deck_id;
-
-            //await DeckAPI.Deal(deck_id);
         }
 
         private async void hitBtn_Click(object sender, RoutedEventArgs e)
         {
             Hand hand = await DeckAPIViewModel.DrawCard(deck_id);
-            Debug.WriteLine(hand.cards[0].value);
 
-            //if (player.handCount < 5)
-            //playerCard<i>.Source = card.image;
-            //handValue += card.value
+            switch (hand.cards[0].value)
+            {
+                case "KING": case "QUEEN": case "JACK":
+                    player.handValue += 10;
+                    break;
+                case "ACE":
+                    if (player.handValue + 11 <= 21)
+                    {
+                        player.handValue += 11;
+                    }
+                    else
+                    {
+                        player.handValue += 1;
+                    }
+                    break;
+                case "2":
+                    player.handValue += 2;
+                    break;
+                case "3":
+                    player.handValue += 3;
+                    break;
+                case "4":
+                    player.handValue += 4;
+                    break;
+                case "5":
+                    player.handValue += 5;
+                    break;
+                case "6":
+                    player.handValue += 6;
+                    break;
+                case "7":
+                    player.handValue += 7;
+                    break;
+                case "8":
+                    player.handValue += 8;
+                    break;
+                case "9":
+                    player.handValue += 9;
+                    break;
+            }
         }
 
         private void quitBtn_Click(object sender, RoutedEventArgs e)
