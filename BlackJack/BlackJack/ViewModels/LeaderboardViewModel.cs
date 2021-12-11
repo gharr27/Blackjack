@@ -57,7 +57,10 @@ namespace BlackJack.ViewModels
         {
             User user = leaderboard.FetchUsers(searchName);
 
-            UserViewModel found = Users.
+            //I added this just to get the error to go away
+            UserViewModel found = new UserViewModel();
+
+            return found;
         }
     }
 }
