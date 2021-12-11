@@ -9,8 +9,8 @@ namespace BlackJack.Models
     class Dealer
     {
         public int handValue { get; set; }
-        public int handcount { get; set; }
-        Random random;
+        public int handCount { get; set; }
+        Random random = new Random();
 
         public bool isMakeMove()
         {
