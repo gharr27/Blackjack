@@ -16,11 +16,11 @@
             <TextBlock x:Name="dealerHand" Text="Hand: " FontSize="25"/>
         </StackPanel>
 
-        <Image x:Name="dealerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="275,50,575,0"/>
-        <Image x:Name="dealerCard2" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="385,50,465,0"/>
-        <Image x:Name="dealerCard3" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="495,50,355,0"/>
-        <Image x:Name="dealerCard4" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="605,50,245,0"/>
-        <Image x:Name="dealerCard5" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="715,50,135,0"/>
+        <Image x:Name="dealerCard1" Source="/Assets/CardBack.png" VerticalAlignment="Top" Height="150" Width="100" Margin="275,50,575,0"/>
+        <Image x:Name="dealerCard2" Source="/Assets/CardBack.png" VerticalAlignment="Top" Height="150" Width="100" Margin="385,50,465,0"/>
+        <Image x:Name="dealerCard3" Source="/Assets/CardBack.png" VerticalAlignment="Top" Height="150" Width="100" Margin="495,50,355,0"/>
+        <Image x:Name="dealerCard4" Source="/Assets/CardBack.png" VerticalAlignment="Top" Height="150" Width="100" Margin="605,50,245,0"/>
+        <Image x:Name="dealerCard5" Source="/Assets/CardBack.png" VerticalAlignment="Top" Height="150" Width="100" Margin="715,50,135,0"/>
 
         <Button x:Name="raiseBtn" Content="Raise Bet" Width="100" Margin="325,218,0,0" Click="raiseBtn_Click" VerticalAlignment="Top"/>
         <Button x:Name="hitButton" Content="Hit" Width="100" Margin="445,218,0,0" Click="hitBtn_Click" VerticalAlignment="Top"/>

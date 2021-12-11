@@ -25,7 +25,7 @@ namespace BlackJack.Models
 
         public async static Task<Deck> Deal(string deck_id)
         {
-            Uri request = new Uri($"{baseUrl}/{deck_id}/draw/?count=2");
+            Uri request = new Uri($"{baseUrl}/{deck_id}/draw/?count=4");
 
             Deck hand;
 
