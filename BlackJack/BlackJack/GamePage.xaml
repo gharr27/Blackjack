@@ -7,62 +7,40 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    MinHeight="600" MinWidth="600">
+    Height="600" Width="950">
 
     <Grid Background="DarkGreen">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="750"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="dealerInfo.Margin" Value="25,100"/>
-                        <Setter Target="dealerName.FontSize" Value="50"/>
-                        <Setter Target="dealerHand.FontSize" Value="25"/>
 
-                        <Setter Target="playerInfo.Margin" Value="25,600,0,0"/>
-                        <Setter Target="playerName.FontSize" Value="50"/>
-                        <Setter Target="playerBalance.FontSize" Value="25"/>
-                        <Setter Target="playerBet.FontSize" Value="25"/>
-                        <Setter Target="playerHand.FontSize" Value="25"/>
-
-
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-        
-        <StackPanel x:Name="dealerInfo" Height="200" Width="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,50">
-            <TextBlock x:Name="dealerName" Text="Dealer" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" FontWeight="Bold"/>
-            <TextBlock x:Name="dealerHand" Text="Hand: "  VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10"/>
-        </StackPanel>
-        
-        <Image x:Name="dealerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="375,100,975,0"/>
-        <Image x:Name="dealerCard2" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="525,100,825,0"/>
-        <Image x:Name="dealerCard3" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="675,100,675,0"/>
-        <Image x:Name="dealerCard4" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="825,100,525,0"/>
-        <Image x:Name="dealerCard5" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="200" Width="150" Margin="975,100,375,0"/>
-
-        <Button x:Name="raiseBtn" Content="Raise Bet" Width="100" Margin="475,0,0,0" Click="raiseBtn_Click"/>
-        <Button x:Name="hitButton" Content="Hit" Width="100" Margin="625,0,0,0" Click="hitBtn_Click"/>
-        <Button x:Name="standBtn" Content="Stand" Width="100" Margin="775,0,0,0" Click="standBtn_Click"/>
-        <Button x:Name="quitBtn" Content="Quit" Width="100" Margin="925,0,0,0" Click="quitBtn_Click"/>
-
-        <TextBlock x:Name="result" Text="result" Height="100" Width="500" HorizontalAlignment="Center" Margin="0,200,0,0" FontSize="60" TextAlignment="Center"/>
-
-        <StackPanel x:Name="playerInfo" Height="200" Width="350" HorizontalAlignment="Left" Margin="15,200">
-            <TextBlock x:Name="playerName" Text="Player" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" FontWeight="Bold"/>
-            <TextBlock x:Name="playerBalance" Text="Balance: $000,000,000" HorizontalAlignment="Left" FontSize="10" />
-            <TextBlock x:Name="playerBet" Text="Bet: $000,000,000" HorizontalAlignment="Left" FontSize="10"  />
-            <TextBlock x:Name="playerHand" Text="Hand: " HorizontalAlignment="Left" FontSize="10" />
+        <StackPanel x:Name="dealerInfo" Height="200" Width="250" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,50">
+            <TextBlock x:Name="dealerName" Text="Dealer" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
+            <TextBlock x:Name="dealerHand" Text="Hand: "  VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25"/>
         </StackPanel>
 
-        <Image x:Name="playerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="375,50,975,100"/>
-        <Image x:Name="playerCard2" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="525,50,825,100"/>
-        <Image x:Name="playerCard3" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="675,50,675,100"/>
-        <Image x:Name="playerCard4" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="825,0,525,100"/>
-        <Image x:Name="playerCard5" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="200" Width="150" Margin="975,0,375,100"/>
+        <Image x:Name="dealerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="275,50,575,0"/>
+        <Image x:Name="dealerCard2" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="385,50,465,0"/>
+        <Image x:Name="dealerCard3" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="495,50,355,0"/>
+        <Image x:Name="dealerCard4" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="605,50,245,0"/>
+        <Image x:Name="dealerCard5" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Top" Height="150" Width="100" Margin="715,50,135,0"/>
+
+        <Button x:Name="raiseBtn" Content="Raise Bet" Width="100" Margin="325,218,0,0" Click="raiseBtn_Click" VerticalAlignment="Top"/>
+        <Button x:Name="hitButton" Content="Hit" Width="100" Margin="445,218,0,0" Click="hitBtn_Click" VerticalAlignment="Top"/>
+        <Button x:Name="standBtn" Content="Stand" Width="100" Margin="577,218,0,0" Click="standBtn_Click" VerticalAlignment="Top"/>
+        <Button x:Name="quitBtn" Content="Quit" Width="100" Margin="700,218,0,0" Click="quitBtn_Click" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="result" Text="Result" Height="100" Margin="25,260,425,260" FontSize="50" TextAlignment="Center"/>
+
+        <StackPanel x:Name="playerInfo" Height="200" Width="250" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="25,0,0,50">
+            <TextBlock x:Name="playerName" Text="Player" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
+            <TextBlock x:Name="playerBalance" Text="Balance: $000,000,000" HorizontalAlignment="Left" FontSize="25" />
+            <TextBlock x:Name="playerBet" Text="Bet: $000,000,000" HorizontalAlignment="Left" FontSize="25"  />
+            <TextBlock x:Name="playerHand" Text="Hand: " HorizontalAlignment="Left" FontSize="25" />
+        </StackPanel>
+
+        <Image x:Name="playerCard1" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="150" Width="100" Margin="275,0,575,100"/>
+        <Image x:Name="playerCard2" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="150" Width="100" Margin="385,0,465,100"/>
+        <Image x:Name="playerCard3" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="150" Width="100" Margin="495,0,355,100"/>
+        <Image x:Name="playerCard4" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="150" Width="100" Margin="605,0,245,100"/>
+        <Image x:Name="playerCard5" Source="https://deckofcardsapi.com/static/img/8S.png" VerticalAlignment="Bottom" Height="150" Width="100" Margin="715,0,135,100"/>
 
     </Grid>
 </Page>
