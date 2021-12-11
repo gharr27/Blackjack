@@ -26,11 +26,14 @@ namespace BlackJack
     {
         private string deck_id;
         private Player player;
+        private int bet_value;
 
         public GamePage()
         {
             this.InitializeComponent();
 
+            player = new Player();
+            player.balance = 2500;
             NewGame();           
         }
 
@@ -38,6 +41,7 @@ namespace BlackJack
         {
             if(player.handValue == 21) //Player win
             {
+                player.balance += bet_value * 2;
                 NewGame();
             }
             else if (player.handValue > 21) // Player lose
@@ -48,9 +52,15 @@ namespace BlackJack
 
         private async void NewGame()
         {
-            Deck deck = await DeckAPIViewModel.NewDeck();
-            player = new Player();
+            player.handValue = 0;
+            player.handCount = 0;
+            bet_value = 0;
+
             playerHand.Text = "Hand: 0";
+            playerBalance.Text = "Balance: $" + player.balance;
+            playerBet.Text = "Bet: $" + bet_value;
+
+            Deck deck = await DeckAPIViewModel.NewDeck();
 
             playerCard1.Source = null;
             playerCard2.Source = null;
@@ -156,13 +166,25 @@ namespace BlackJack
 
         private void raiseBtn_Click(object sender, RoutedEventArgs e)
         {
-            //player.bet += 100;
-            //player.balance -= 100;
+            if (player.balance > 100)
+            {
+                bet_value += 100;
+                player.balance -= 100;
+            }
+            else
+            {
+                bet_value += player.balance;
+                player.balance -= player.balance;
+            }
+
+            playerBalance.Text = "Balance: $" + player.balance;
+            playerBet.Text = "Bet: $" + bet_value;
         }
 
         private void standBtn_Click(object sender, RoutedEventArgs e)
         {
-            //dealer logic
+            player.balance += bet_value * 2;
+            NewGame();
         }
     }
 }
