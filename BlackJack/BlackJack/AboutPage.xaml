@@ -11,7 +11,7 @@
 
     <Grid Background="DarkGreen">
         
-        <Image Source="Assets/spade.png" Opacity="0.3"/>
+        <Image Source="Assets/spade.png" Opacity="0.5"/>
         
         <StackPanel x:Name="InfoStack" VerticalAlignment="Center">            
             <TextBlock x:Name="titleText" Text="BLACKJACK" Foreground="Black" FontSize="100" TextAlignment="Center"/>

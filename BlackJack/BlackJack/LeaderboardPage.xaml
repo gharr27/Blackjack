@@ -11,16 +11,19 @@
     Height="600" Width="950" MinHeight="600" MinWidth="950">
 
     <Grid Background="DarkGreen">
+        <Image Source="Assets/spade.png" Opacity="0.5"/>
         <TextBlock Text="Leaderboard" FontSize ="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50"/>
         <Button x:Name="menuBtn" Content="Main Menu" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="100,80" Click="menuBtn_Click"/>
-        <ListView x:Name="LeaderboardList" ItemsSource="{x:Bind leaderboard}" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,150" Width="900" Height="400">
+        <ListView x:Name="LeaderboardList" ItemsSource="{x:Bind Leaderboard.Users}" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,150" Width="900" Height="300">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localModel:UserViewModel">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{x:Bind Username, Mode=OneWay}"/>
+                    <GridView>
+                        <GridViewItem>
+                            <TextBlock Text="{x:Bind Username, Mode=OneWay}"/>
+                        </GridViewItem>
                         <TextBlock Text="{x:Bind Balance, Mode=OneWay}"/>
                         <TextBlock Text="{x:Bind Blackjacks, Mode=OneWay}"/>
-                    </StackPanel>
+                    </GridView>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -1,4 +1,5 @@
 ﻿using BlackJack.Models;
+using BlackJack.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,20 +25,13 @@ namespace BlackJack
     /// </summary>
     public sealed partial class LeaderboardPage : Page
     {
-        private ObservableCollection<User> leaderboard;
+        public LeaderboardViewModel Leaderboard;
 
         public LeaderboardPage()
         {
             this.InitializeComponent();
 
-            using (var db = new UserDB())
-            {
-                leaderboard = new ObservableCollection<User>();
-                foreach (var user in db.Users)
-                {
-                    leaderboard.Add(user);
-                }
-            }
+            Leaderboard = new LeaderboardViewModel();
         }
 
         private void menuBtn_Click(object sender, RoutedEventArgs e)

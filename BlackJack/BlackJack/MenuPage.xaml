@@ -10,7 +10,7 @@
     Height="600" Width="950" MinHeight="600" MinWidth="950">
 
     <Grid Background="DarkGreen">
-        
+        <Image Source="Assets/spade.png" Opacity="0.5"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
             <TextBlock x:Name="title" Text="BLACKJACK" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="20" FontSize="100" Foreground="Black" />
             <Button x:Name="playBtn" Content="Play" HorizontalAlignment="Center" Margin="20" Width="200" Click="playBtn_Click"/>

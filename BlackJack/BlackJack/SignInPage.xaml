@@ -8,14 +8,17 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     Height="600" Width="950" MinHeight="600" MinWidth="950">
+    <Grid Background="DarkGreen">
+        <Image Source="Assets/spade.png" Opacity="0.5"/>
+        <StackPanel>
 
-    <StackPanel Background="DarkGreen">
-        <RelativePanel VerticalAlignment="Top" Height="200">
-            <TextBlock x:Name="signInLabel" Text="Enter a Username:" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25"/>
-            <TextBox x:Name="signInEntry" PlaceholderText="Username" Height="35" Width="200" RelativePanel.Below="signInLabel" Margin="25,0" Background="White"/>
-            <Button x:Name="signInBtn" Content="Sign-In" RelativePanel.Below="signInLabel" RelativePanel.RightOf="signInEntry" Click="signInBtn_Click"/>
-        </RelativePanel>    
+            <RelativePanel VerticalAlignment="Top" Height="200">
+                <TextBlock x:Name="signInLabel" Text="Enter a Username:" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25"/>
+                <TextBox x:Name="signInEntry" PlaceholderText="Username" Height="35" Width="200" RelativePanel.Below="signInLabel" Margin="25,0" Background="White"/>
+                <Button x:Name="signInBtn" Content="Sign-In" RelativePanel.Below="signInLabel" RelativePanel.RightOf="signInEntry" Click="signInBtn_Click"/>
+            </RelativePanel>
 
-        <Button x:Name="cancelBtn" Content="Cancel" VerticalAlignment="Center" Margin="25,100" Click="cancelBtn_Click"/>
-    </StackPanel>
+            <Button x:Name="cancelBtn" Content="Cancel" VerticalAlignment="Center" Margin="25,100" Click="cancelBtn_Click"/>
+        </StackPanel>
+    </Grid>
 </Page>

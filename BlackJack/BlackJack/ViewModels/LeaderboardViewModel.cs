@@ -31,7 +31,7 @@ namespace BlackJack.ViewModels
 
         public void UpdateUser(int index)
         {
-            var userViewModel = Users.ElementAt(index);
+            var userViewModel = Users.ElementAt(index - 1);
             leaderboard.UpdateUser(userViewModel.Model);
         }
 

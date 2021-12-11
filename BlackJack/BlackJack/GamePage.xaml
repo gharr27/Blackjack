@@ -10,6 +10,7 @@
     Height="600" Width="950" MinHeight="600" MinWidth="950">
 
     <Grid Background="DarkGreen">
+        <Image Source="Assets/spade.png" Opacity="0.5"/>
 
         <StackPanel x:Name="dealerInfo" Height="200" Width="250" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,50">
             <TextBlock x:Name="dealerName" Text="Dealer" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
