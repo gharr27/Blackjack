@@ -13,6 +13,7 @@
 
         <StackPanel x:Name="dealerInfo" Height="200" Width="250" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,50">
             <TextBlock x:Name="dealerName" Text="Dealer" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
+            <TextBlock x:Name="dealerHand" Text="Hand: " FontSize="25"/>
         </StackPanel>
 
         <Image x:Name="dealerCard1" Source="/Assets/CardBack.png" VerticalAlignment="Top" Height="150" Width="100" Margin="275,50,575,0"/>
@@ -26,7 +27,8 @@
         <Button x:Name="standBtn" Content="Stand" Width="100" Margin="577,218,0,0" Click="standBtn_Click" VerticalAlignment="Top"/>
         <Button x:Name="quitBtn" Content="Quit" Width="100" Margin="700,218,0,0" Click="quitBtn_Click" VerticalAlignment="Top"/>
 
-        <TextBlock x:Name="result" Text="Result" Height="100" Margin="25,260,425,260" FontSize="50" TextAlignment="Center"/>
+        <TextBlock x:Name="result" Text="Dealer Wins!" Height="100" Margin="25,260,628,240" FontSize="50" TextAlignment="Center"/>
+        <Button x:Name="redrawBtn" Content="Redraw" Width="100" Margin="325,0,0,0" Click="redrawBtn_Click" Visibility="Collapsed"/>
 
         <StackPanel x:Name="playerInfo" Height="200" Width="250" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="25,0,0,50">
             <TextBlock x:Name="playerName" Text="Player" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="50" FontWeight="Bold"/>
