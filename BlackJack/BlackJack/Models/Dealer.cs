@@ -8,11 +8,41 @@ namespace BlackJack.Models
 {
     class Dealer
     {
-        string dealer_deck_id;
+        public int handValue { get; set; }
+        public int handcount { get; set; }
+        Random random;
 
-        public Dealer(string deck_id)
+        public bool isMakeMove()
         {
-            dealer_deck_id = deck_id;
+            if (handValue <= 15)
+            {
+                return true;
+            }
+            else if (handValue > 15 && handValue < 18)
+            {
+                int rand = random.Next(1, 2);
+                if(rand == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (handValue >= 18)
+            {
+                int rand = random.Next(1, 4);
+                if (rand == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }

@@ -26,6 +26,7 @@ namespace BlackJack
     {
         private string deck_id;
         private Player player;
+        private Dealer dealer;
         private int bet_value;
 
         public GamePage()
@@ -33,20 +34,20 @@ namespace BlackJack
             this.InitializeComponent();
 
             player = new Player();
+            dealer = new Dealer();
             player.balance = 2500;
             NewGame();           
         }
 
         private void CheckForEndGame()
         {
-            if(player.handValue == 21) //Player win
+            if(player.handValue == 21 || dealer.handValue == 21)
             {
-                player.balance += bet_value * 2;
-                NewGame();
-            }
-            else if (player.handValue > 21) // Player lose
-            {
-                NewGame();
+                if (player.handValue == 21)//Player Wins
+                {
+                    player.balance += bet_value * 2;
+                    NewGame();
+                }
             }
         }
 
@@ -54,6 +55,10 @@ namespace BlackJack
         {
             player.handValue = 0;
             player.handCount = 0;
+
+            dealer.handValue = 0;
+            dealer.handcount = 0;
+
             bet_value = 0;
 
             playerHand.Text = "Hand: 0";
