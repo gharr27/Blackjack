@@ -12,7 +12,7 @@
     <StackPanel Background="DarkGreen">
         <RelativePanel VerticalAlignment="Top" Height="200">
             <TextBlock x:Name="signInLabel" Text="Enter a Username:" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25"/>
-            <TextBox x:Name="signInEntry" PlaceholderText="Username" Height="30" Width="200" RelativePanel.Below="signInLabel" Margin="25,0" Background="White"/>
+            <TextBox x:Name="signInEntry" PlaceholderText="Username" Height="35" Width="200" RelativePanel.Below="signInLabel" Margin="25,0" Background="White"/>
             <Button x:Name="signInBtn" Content="Sign-In" RelativePanel.Below="signInLabel" RelativePanel.RightOf="signInEntry" Click="signInBtn_Click"/>
         </RelativePanel>    
 

@@ -23,7 +23,7 @@
         <Image x:Name="dealerCard5" Source="/Assets/CardBack.png" VerticalAlignment="Top" Height="150" Width="100" Margin="715,50,135,0"/>
 
         <Button x:Name="raiseBtn" Content="Raise Bet" Width="100" Margin="325,218,0,0" Click="raiseBtn_Click" VerticalAlignment="Top"/>
-        <Button x:Name="hitButton" Content="Hit" Width="100" Margin="445,218,0,0" Click="hitBtn_Click" VerticalAlignment="Top"/>
+        <Button x:Name="hitBtn" Content="Hit" Width="100" Margin="445,218,0,0" Click="hitBtn_Click" VerticalAlignment="Top"/>
         <Button x:Name="standBtn" Content="Stand" Width="100" Margin="577,218,0,0" Click="standBtn_Click" VerticalAlignment="Top"/>
         <Button x:Name="quitBtn" Content="Quit" Width="100" Margin="700,218,0,0" Click="quitBtn_Click" VerticalAlignment="Top"/>
 

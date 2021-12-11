@@ -56,7 +56,7 @@ namespace BlackJack
             Leaderboard.Users.Add(newUser);
 
             string json = JsonConvert.SerializeObject(newUser);
-            ApplicationData.Current.LocalSettings.Values["user"] = newUser;
+            ApplicationData.Current.LocalSettings.Values["user"] = json;
 
 
             //send username and db data to GamePage?

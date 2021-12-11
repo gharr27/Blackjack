@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -27,7 +27,7 @@ namespace BlackJack
     public sealed partial class GamePage : Page
     {
         private UserViewModel user; 
-        private LeaderboardViewModel leaderboard;
+        private LeaderboardViewModel leaderboard = new LeaderboardViewModel();
 
         private string deck_id;
         private Player player;
@@ -64,37 +64,50 @@ namespace BlackJack
                 if (player.handValue == 21) //Player Wins
                 {
                     player.balance += bet_value * 2;
-                    NewGame();
+                    GameOver("You Win!");
                 }
                 else //Dealer Wins
                 {
-                    NewGame();
+                    GameOver("House Wins!");
                 }
             }
+
             if(player.handValue > dealer.handValue && standing || dealerStanding) //Player Wins
             {
                 player.balance += bet_value * 2;
-                NewGame();
+                GameOver("You Win!");
             }
             else //Dealer Wins
             {
-                NewGame();
+                GameOver("House Wins!");
             }
+
             if(player.handValue > 21)//Dealer Wins
             {
-                NewGame();
+                GameOver("House Wins!");
             }
             else if (dealer.handValue > 21)//Player Wins
             {
                 player.balance += bet_value * 2;
-                NewGame();
+                GameOver("You Win!");
             }
+        }
+
+        private void GameOver(string winner)
+        {
+            result.Text = winner;
+
+            redrawBtn.Visibility = Visibility.Visible;
+            hitBtn.Visibility = Visibility.Collapsed;
+            raiseBtn.Visibility = Visibility.Collapsed;
+            standBtn.Visibility = Visibility.Collapsed;
         }
 
         private async void NewGame()
         {
             standing = false;
             dealerStanding = false;
+
 
             player.handValue = 0;
             player.handCount = 0;
@@ -107,6 +120,12 @@ namespace BlackJack
             playerHand.Text = "Hand: 0";
             playerBalance.Text = "Balance: $" + player.balance;
             playerBet.Text = "Bet: $" + bet_value;
+            result.Text = "";
+
+            redrawBtn.Visibility = Visibility.Collapsed;
+            hitBtn.Visibility = Visibility.Visible;
+            raiseBtn.Visibility = Visibility.Visible;
+            standBtn.Visibility = Visibility.Visible;
 
             playerCard1.Source = null;
             playerCard2.Source = null;
@@ -202,6 +221,9 @@ namespace BlackJack
         private void standBtn_Click(object sender, RoutedEventArgs e)
         {
             standing = true;
+
+            CheckForEndGame();
+            DealerMove();
         }
 
         private void AddCardValue(string value)
@@ -344,7 +366,7 @@ namespace BlackJack
 
         private void redrawBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NewGame();
         }
     }
 }
