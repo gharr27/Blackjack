@@ -29,8 +29,7 @@ namespace BlackJack
         {
             this.InitializeComponent();
 
-            NewGame();
-           
+            NewGame();           
         }
 
         private async void NewGame()
@@ -48,13 +47,14 @@ namespace BlackJack
             Debug.WriteLine(hand.cards[0].value);
 
             //if (player.handCount < 5)
-            //playerCard1.Source = card.image;
+            //playerCard<i>.Source = card.image;
             //handValue += card.value
         }
 
         private void quitBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.GoBack();
+            //save balance to DB
+            this.Frame.Navigate(typeof(MenuPage));
         }
 
         private void raiseBtn_Click(object sender, RoutedEventArgs e)
