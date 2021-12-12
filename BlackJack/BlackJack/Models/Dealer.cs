@@ -30,7 +30,7 @@ namespace BlackJack.Models
                     return false;
                 }
             }
-            else if (handValue >= 18)
+            else if (handValue >= 18 && handValue <= 21)
             {
                 int rand = random.Next(1, 4);
                 if (rand == 1)
@@ -42,7 +42,10 @@ namespace BlackJack.Models
                     return false;
                 }
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -364,6 +364,7 @@ namespace BlackJack
             else
             {
                 dealerStanding = true;
+                CheckForEndGame();
             }
         }
 
