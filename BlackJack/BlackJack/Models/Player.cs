@@ -10,6 +10,7 @@ namespace BlackJack.Models
     class Player
     {
         public int balance { get; set; }
+        public int blackJacks { get; set; }
         public int handValue { get; set; }
         public int handCount { get; set; }
     }

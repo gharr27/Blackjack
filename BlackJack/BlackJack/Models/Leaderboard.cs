@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,9 @@ namespace BlackJack.Models
 {
     public class Leaderboard
     {
-        private List<User> userList;
+        private ObservableCollection<User> userList;
 
-        public List<User> UserList
+        public ObservableCollection<User> UserList
         {
             get
             {
@@ -20,7 +21,7 @@ namespace BlackJack.Models
 
         public Leaderboard()
         {
-            userList = new List<User>();
+            userList = new ObservableCollection<User>();
 
             BuildUserList();
         }

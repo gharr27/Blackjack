@@ -152,7 +152,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Assets\CardBack.png" />
+    <Content Include="Assets\CardBack.png" />
     <Content Include="Assets\spade.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

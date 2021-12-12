@@ -2,6 +2,7 @@
 using System.Collections.Generic; 
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -36,6 +37,7 @@ namespace BlackJack
 
         private bool standing = false;
         private bool dealerStanding = false;
+        private bool isGameOver = false;
 
         private Uri imageUri;
         private BitmapImage bitmapImage;
@@ -63,6 +65,7 @@ namespace BlackJack
             {
                 if (player.handValue == 21) //Player Wins
                 {
+                    player.blackJacks++;
                     player.balance += bet_value * 2;
                     GameOver("You Win!");
                 }
@@ -72,12 +75,12 @@ namespace BlackJack
                 }
             }
 
-            if(player.handValue > dealer.handValue && standing || dealerStanding) //Player Wins
+            if(player.handValue > dealer.handValue && standing && dealerStanding) //Player Wins
             {
                 player.balance += bet_value * 2;
                 GameOver("You Win!");
             }
-            else //Dealer Wins
+            else if (dealer.handValue > player.handValue && standing && dealerStanding) //Dealer Wins
             {
                 GameOver("House Wins!");
             }
@@ -91,11 +94,17 @@ namespace BlackJack
                 player.balance += bet_value * 2;
                 GameOver("You Win!");
             }
+
+            if(standing && !dealerStanding)
+            {
+                DealerMove();
+            }
         }
 
         private void GameOver(string winner)
         {
             result.Text = winner;
+            isGameOver = true;
 
             redrawBtn.Visibility = Visibility.Visible;
             hitBtn.Visibility = Visibility.Collapsed;
@@ -107,6 +116,7 @@ namespace BlackJack
         {
             standing = false;
             dealerStanding = false;
+            isGameOver = false;
 
 
             player.handValue = 0;
@@ -132,6 +142,12 @@ namespace BlackJack
             playerCard3.Source = null;
             playerCard4.Source = null;
             playerCard5.Source = null;
+
+            dealerCard1.Visibility = Visibility.Visible;
+            dealerCard2.Visibility = Visibility.Visible;
+            dealerCard3.Visibility = Visibility.Collapsed;
+            dealerCard4.Visibility = Visibility.Collapsed;
+            dealerCard5.Visibility = Visibility.Collapsed;
 
             Deck deck = await DeckAPIViewModel.NewDeck();
 
@@ -163,40 +179,46 @@ namespace BlackJack
 
         private async void hitBtn_Click(object sender, RoutedEventArgs e)
         {
-            player.handCount++;
-            if (player.handCount <= 5)
+            if (!standing)
             {
-                Hand hand = await DeckAPIViewModel.DrawCard(deck_id);
-
-                switch (player.handCount)
+                player.handCount++;
+                if (player.handCount <= 5)
                 {
-                    case 3:
-                        imageUri = new Uri(hand.cards[0].image, UriKind.Absolute);
-                        bitmapImage = new BitmapImage(imageUri);
-                        playerCard3.Source = bitmapImage;
-                        break;
-                    case 4:
-                        imageUri = new Uri(hand.cards[0].image, UriKind.Absolute);
-                        bitmapImage = new BitmapImage(imageUri);
-                        playerCard4.Source = bitmapImage;
-                        break;
-                    case 5:
-                        imageUri = new Uri(hand.cards[0].image, UriKind.Absolute);
-                        bitmapImage = new BitmapImage(imageUri);
-                        playerCard5.Source = bitmapImage;
-                        break;
-                }
+                    Hand hand = await DeckAPIViewModel.DrawCard(deck_id);
 
-                AddCardValue(hand.cards[0].value);
+                    switch (player.handCount)
+                    {
+                        case 3:
+                            imageUri = new Uri(hand.cards[0].image, UriKind.Absolute);
+                            bitmapImage = new BitmapImage(imageUri);
+                            playerCard3.Source = bitmapImage;
+                            break;
+                        case 4:
+                            imageUri = new Uri(hand.cards[0].image, UriKind.Absolute);
+                            bitmapImage = new BitmapImage(imageUri);
+                            playerCard4.Source = bitmapImage;
+                            break;
+                        case 5:
+                            imageUri = new Uri(hand.cards[0].image, UriKind.Absolute);
+                            bitmapImage = new BitmapImage(imageUri);
+                            playerCard5.Source = bitmapImage;
+                            break;
+                    }
+
+                    AddCardValue(hand.cards[0].value);
+                }
+                CheckForEndGame();
             }
-            CheckForEndGame();
-            DealerMove();
+            if (!isGameOver && !dealerStanding)
+            {
+                DealerMove();
+            }
         }
 
         private void quitBtn_Click(object sender, RoutedEventArgs e)
         {
             //save balance to DB
-            leaderboard.UpdateUser(user.UserId);
+            leaderboard.UpdateUser(user.UserId, player.balance, player.blackJacks);
             
             this.Frame.Navigate(typeof(MenuPage));
         }
@@ -332,7 +354,7 @@ namespace BlackJack
                     Hand hand = await DeckAPIViewModel.DrawCard(deck_id);
 
                     AddDealerCardValue(hand.cards[0].value);
-                    //AddDealerCardImage(dealer.handCount);
+                    AddDealerCardImage(dealer.handCount);
                 }
                 CheckForEndGame();
             }
@@ -348,18 +370,13 @@ namespace BlackJack
             switch (count)
             {
                 case 3:
-                    
-                    dealerCard3.Source = bitmapImage;
+                    dealerCard3.Visibility = Visibility.Visible;
                     break;
                 case 4:
-                    imageUri = new Uri("Assets/CardBack.png", UriKind.RelativeOrAbsolute);
-                    bitmapImage = new BitmapImage(imageUri);
-                    dealerCard4.Source = bitmapImage;
+                    dealerCard4.Visibility = Visibility.Visible;
                     break;
                 case 5:
-                    imageUri = new Uri("Assets/CardBack.png", UriKind.RelativeOrAbsolute);
-                    bitmapImage = new BitmapImage(imageUri);
-                    dealerCard5.Source = bitmapImage;
+                    dealerCard5.Visibility = Visibility.Visible;
                     break;
             }
         }

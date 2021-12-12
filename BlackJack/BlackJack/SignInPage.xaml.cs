@@ -49,7 +49,7 @@ namespace BlackJack
             var newUser = new UserViewModel
             {
                 Username = signInEntry.Text,
-                Balance = 5000,
+                Balance = 0,
                 Blackjacks = 0
             };
 

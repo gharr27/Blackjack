@@ -11,7 +11,7 @@ namespace BlackJack.ViewModels
 {
     public class LeaderboardViewModel
     {
-        private Leaderboard leaderboard;
+        public Leaderboard leaderboard;
 
         public ObservableCollection<UserViewModel> Users { get; set;  }
 
@@ -29,9 +29,11 @@ namespace BlackJack.ViewModels
             Users.CollectionChanged += Users_CollectionChanged;
         }
 
-        public void UpdateUser(int index)
+        public void UpdateUser(int index, int balance, int blackJacks)
         {
             var userViewModel = Users.ElementAt(index - 1);
+            userViewModel.Balance = balance;
+            userViewModel.Blackjacks = blackJacks;
             leaderboard.UpdateUser(userViewModel.Model);
         }
 
