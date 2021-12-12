@@ -106,6 +106,8 @@ namespace BlackJack
             result.Text = winner;
             isGameOver = true;
 
+            dealerHand.Text = "Hand: " + dealer.handValue;
+
             redrawBtn.Visibility = Visibility.Visible;
             hitBtn.Visibility = Visibility.Collapsed;
             raiseBtn.Visibility = Visibility.Collapsed;
@@ -127,6 +129,7 @@ namespace BlackJack
 
             bet_value = 0;
 
+            dealerHand.Text = "Hand:";
             playerHand.Text = "Hand: 0";
             playerBalance.Text = "Balance: $" + player.balance;
             playerBet.Text = "Bet: $" + bet_value;
