@@ -21,8 +21,12 @@
                         <GridViewItem>
                             <TextBlock Text="{x:Bind Username, Mode=OneWay}"/>
                         </GridViewItem>
-                        <TextBlock Text="{x:Bind Balance, Mode=OneWay}"/>
-                        <TextBlock Text="{x:Bind Blackjacks, Mode=OneWay}"/>
+                        <GridViewItem>
+                            <TextBlock Text="{x:Bind Balance, Mode=OneWay}"/>
+                        </GridViewItem>
+                        <GridViewItem>
+                            <TextBlock Text="{x:Bind Blackjacks, Mode=OneWay}"/>
+                        </GridViewItem>
                     </GridView>
                 </DataTemplate>
             </ListView.ItemTemplate>
